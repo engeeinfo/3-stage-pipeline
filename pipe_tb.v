@@ -33,6 +33,13 @@ module pipe_tb;
         #20 a = 7;  b = 8;  c = 6; d = 9;
         #20 a = 6;  b = 13; c = 11; d = 0;
         #20 a = 10; b = 12; c = 7; d = 6;
+        #100;
+        if (f !== 20'd120) begin
+            $display("FAIL: final pipelined result was %0d", f);
+            $finish(1);
+        end
+        $display("PASS: three-stage pipeline regression");
+        $finish(0);
     end
 
     // Simulation dump for waveform analysis
